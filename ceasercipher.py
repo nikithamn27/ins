@@ -7,6 +7,6 @@ def caesar_cipher(text, shift):
         else:
             result += char
     return result
-text = "my name is maithili"
+text = "my name is nikita"
 shift = 4
 print("Encrypted:", caesar_cipher(text, shift))
