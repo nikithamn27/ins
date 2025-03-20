@@ -160,5 +160,82 @@ Decrypted: HELLO WORLD
 - Implement **automated cryptanalysis tools** to break weak ciphers.
 - Enhance **key management** for Hill and Playfair ciphers.
 - A potential improvement for the Hybrid cipher could be dynamic key generation to enhance security against modern cryptanalysis.
+  # Feistel-Cipher
+
+# Introduction
+
+This program implements the **Feistel Cipher**, a symmetric encryption algorithm used in many cryptographic systems.
+
+## Working
+
+- Encrypts and decrypts messages using a **Feistel network**.
+- Converts text to **binary format** for processing.
+- Uses a **user-provided key** for encryption.
+- Supports **two rounds** of Feistel structure.
+
+## `feistel_encrypt(plaintext, key)`
+
+Encrypts the plaintext using the Feistel cipher algorithm.
+
+## `feistel_decrypt(ciphertext, key)`
+
+Decrypts the encrypted message back to its original form.
+
+## Output
+![Image](https://github.com/user-attachments/assets/0059dd58-4a81-4dac-ad68-04b0f780c04a)
+# DES Key Generation
+
+## Introduction
+
+This program implements the **Key Generation** process of the **Data Encryption Standard (DES)** algorithm. It takes a **64-bit binary key** as input, applies **permutations and shifts**, and generates **16 subkeys** used in the encryption process.
+
+## Working
+
+- **Initial Permutation (PC1)**: Reduces the 64-bit key to 56 bits.
+- **Left and Right Key Splitting**: The key is split into two 28-bit halves.
+- **Left Circular Shifts**: Each half is rotated based on predefined shift values.
+- **Permutation Choice 2 (PC2)**: Produces the final **48-bit subkeys**.
+- **Generates 16 Subkeys**, one for each DES encryption round.
+
+## `permute(input, table)`
+
+Performs permutation on the input string based on the given table.
+
+## `leftShift(input, shifts)`
+
+Shifts the input string left by the given number of positions.
+
+## Output Example
+![Image](https://github.com/user-attachments/assets/896545ee-015b-435a-b2e3-a4b499816574)
+
+# RSA Algorithm Implementation
+
+## Introduction
+
+This program implements the **RSA encryption and decryption algorithm** using two prime numbers. RSA is an **asymmetric cryptographic algorithm** that uses **public and private keys** for secure communication.
+
+## Working
+
+- **Choose two prime numbers (p, q)**.
+- Compute **n = p × q**.
+- Compute **Euler's Totient Function (φ(n)) = (p - 1) × (q - 1)**.
+- Find **public key exponent (e)** such that `1 < e < φ(n)` and `gcd(e, φ(n)) = 1`.
+- Compute **private key exponent (d)** such that `(d × e) % φ(n) = 1`.
+- Encrypt the message using `c = (msg^e) % n`.
+- Decrypt the message using `d = (c^d) % n`.
+
+## `gcd(a, b)`
+
+Finds the **greatest common divisor (GCD)** of two numbers.
+
+## `RSA(p, q, msg)`
+
+- Generates **public and private keys**.
+- Encrypts the input message.
+- Decrypts the encrypted message.
+
+## Example Output
+![Image](https://github.com/user-attachments/assets/a604e913-39dc-4d94-bf54-166d701ed274)
+
 
 For any issues or contributions, feel free to submit a pull request or open an issue in the repository. 
